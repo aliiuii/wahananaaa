@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wahana Bermain</title>
+    <title>Anadayana: Hutan Kebahagiaan - Destinasi Wisata Keluarga</title>
+    <meta name="description"
+        content="Anadayana, destinasi ekowisata yang menyatukan keindahan alam dengan wahana bermain modern. Nikmati keseruan dan edukasi lingkungan bersama keluarga.">
     <link rel="icon" href="img/Logotok.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
@@ -14,12 +16,12 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-md sticky-top" id="mainNav">
         <div class="logo">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
                 <img src="img/Logo.png" alt="Logo Anadayana" class="logo mr-3" />
             </a>
         </div>
-        <button class="navbar-toggler navbar-dark bg-dark" type="button" data-toggle="collapse"
-            data-target="#main-navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navigation"
+            aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="main-navigation">
@@ -28,13 +30,13 @@
                     <a class="nav-link" href="index.html">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">WAHANA</a>
+                    <a class="nav-link" href="Wahana.html">WAHANA</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="profil group.html">PROFIL GROUP</a>
+                    <a class="nav-link" href="Profil Group.html">PROFIL GROUP</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="promo.html">PROMO</a>
+                    <a class="nav-link" href="Promo.html">PROMO</a>
                 </li>
             </ul>
         </div>
@@ -57,9 +59,8 @@
             </div>
         </div>
         <div class="buttons">
-            <button id="prev">
-                <<< </button>
-                    <button id="next">>>></button>
+            <button id="prev" aria-label="Previous Slide">‹</button>
+            <button id="next" aria-label="Next Slide">›</button>
         </div>
         <ul class="dots">
             <li class="active"></li>
@@ -108,6 +109,13 @@
 
 
     <section class="info-section">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold text-primary">ANADAYANA</h2>
+            <p class="text-muted">yang berarti "Hutan Kebahagiaan," adalah destinasi rekreasi yang
+                menyatukan keindahan <br>alam dengan wahana bermain modern. Mengusung konsep ekowisata, tempat ini
+                menghadirkan <br>keseruan sekaligus edukasi lingkungan, menjadikannya pilihan ideal bagi keluarga <br>
+                untuk bersenang-senang sambil menjaga alam.</p>
+        </div>
         <!-- Info Buy Section -->
         <div class="info-buy">
             <h1>Get Your Tickets:</h1>
@@ -116,24 +124,15 @@
 
         <!-- Info Cards Container -->
         <div class="info-cards-container">
-            <a href="promo.html" class="info-card">
-                <img src="discount-icon.png" alt="Discount Icon" class="icon">
+            <a href="Promo.html" class="info-card">
                 <h2>Want to Save More?</h2>
                 <p>Check our latest promo!</p>
             </a>
 
-            <a href="profil group.html" class="info-card">
-                <img src="info-icon.png" alt="Info Icon" class="icon">
+            <a href="Profil Group.html" class="info-card">
                 <h2>Need More Information?</h2>
                 <p>See our terms & conditions</p>
             </a>
-        </div>
-        <div class="text-center mb-4">
-            <h2 class="fw-bold text-primary">ANADAYANA</h2>
-            <p class="text-muted">yang berarti "Hutan Kebahagiaan," adalah destinasi rekreasi yang
-                menyatukan keindahan <br>alam dengan wahana bermain modern. Mengusung konsep ekowisata, tempat ini
-                menghadirkan <br>keseruan sekaligus edukasi lingkungan, menjadikannya pilihan ideal bagi keluarga <br>
-                untuk bersenang-senang sambil menjaga alam.</p>
         </div>
     </section>
 
@@ -141,8 +140,8 @@
     <section class="merchant-section">
         <div class="container py-5">
             <div class="text-center">
-                <h1 class="section-title">MERCHANT SKE</h1>
-                <p class="section-subtitle">Merchant-merchant yang bekerjasama dengan SKE.</p>
+                <h1 class="section-title">MERCHANT ANADAYANA</h1>
+                <p class="section-subtitle">Merchant-merchant yang bekerjasama dengan Anadayana.</p>
             </div>
             <div class="row text-center mt-4">
                 <!-- Card 1 -->
@@ -170,39 +169,44 @@
         </div>
     </section>
 
-    <section class="footer bg-dark text-white pt-4">
-        <div class="footer-container">
+    <footer class="footer bg-dark text-white pt-4">
+        <div class="container">
             <div class="row">
-                <div class="col-md-3 footer-section">
-                    <h2>Introduction</h2>
-                    <p>Jungleland, tempat wisata bermain untuk seluruh keluarga, menyediakan lebih dari 32 wahana yang
-                        dapat dinikmati oleh keluarga, anak-anak dan dewasa. Berlokasi di Area kaki Gunung Pancar
-                        Sentul, Bogor.</p>
+                <div class="col-md-4 footer-section">
+                    <h2>ANADAYANA</h2>
+                    <p>Anandavana terus berkembang sebagai destinasi rekreasi keluarga, menghadirkan inovasi wahana yang
+                        menyatu dengan keindahan dan kelestarian alam..</p>
                 </div>
-                <div class="col-md-3 footer-section">
-                    <h2>Social Media</h2>
-                    <p>
-                        <a href="#"><img src="facebook-icon.png" alt="Facebook" class="img-fluid"></a>
-                        <a href="#"><img src="twitter-icon.png" alt="Twitter" class="img-fluid"></a>
-                        <a href="#"><img src="youtube-icon.png" alt="YouTube" class="img-fluid"></a>
-                        <a href="#"><img src="instagram-icon.png" alt="Instagram" class="img-fluid"></a>
-                        <a href="#"><img src="tiktok-icon.png" alt="TikTok" class="img-fluid"></a>
-                    </p>
+                <div class="col-md-4 footer-section">
+                    <h2>Kontak</h2>
+                    <p>Email: anadayana@gmail.com</p>
+                    <p>Telepon: (+62) 123-4567-89123</p>
+                </div>
+                <div class="col-md-4 footer-section">
+                    <h2>Media Sosial</h2>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/jungleland.id" aria-label="Facebook"><img
+                                src="img/logo facebook.png" alt="Facebook"></a>
+                        <a href="https://www.instagram.com/jungleland_indo/" aria-label="Instagram"><img
+                                src="img/logo instagram.png" alt="Instagram"></a>
+                        <a href="https://www.youtube.com/c/JunglelandIndonesia" aria-label="YouTube"><img
+                                src="img/logo youtube.png" alt="YouTube"></a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom text-center mt-4">
-                <p>COPYRIGHT © 2024 | POWERED BY NIAGAWEB</p>
+                <p>© 2024 Anadayana. All Rights Reserved.</p>
             </div>
         </div>
-    </section>
+    </footer>
 
     <!-- Bootstrap JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
     <script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+    <script src="Javascript/Nav.js"></script>
+    <script src="Javascript/slider.js"></script>
 </body>
 
 </html>

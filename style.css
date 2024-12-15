@@ -1,61 +1,99 @@
 body {
   padding: 0;
   margin: 0;
-  background: #d5ed9f;
+  background: linear-gradient(to bottom, #004080, #d5ed9f);
 }
 
 /* NAVBAR */
+.navbar {
+  background: linear-gradient(to right, #004080, #d5ed9f);
+  padding: 10px 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
+  box-shadow: none;
+}
+
 .navbar-brand img {
-  width: 90px;
-  vertical-align: middle;
-  padding: auto;
-  margin-left: 5vh;
+  height: 50px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.1);
+}
+
+.navbar-toggler {
+  border-color: white;
+  outline: none;
+  transition: transform 0.3s ease;
+}
+
+.navbar-toggler:hover {
+  transform: rotate(90deg);
 }
 
 .nav-link {
-  /* Memungkinkan posisi absolut untuk garis */
-  display: inline-block; /* Agar garis hanya selebar teks */
-  color: #00712d; /* Warna teks */
-  text-decoration: none; /* Menghilangkan garis bawah default */
-  margin-right: 1em !important;
-  font-size: large;
+  color: white !important;
   font-weight: bold;
+  margin: 0 10px;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffcc00 !important;
+  transform: translateY(-3px);
 }
 
 .nav-link::after {
   content: "";
   position: absolute;
   left: 0;
-  right: 0;
-  bottom: -2px; /* Jarak garis dari teks */
-  height: 2px; /* Ketebalan garis */
-  background: linear-gradient(90deg, #12c2e9, #c471ed); /* Warna garis */
-  transform: scaleX(0); /* Memulai dengan garis tidak terlihat */
-  transition: transform 0.3s ease; /* Transisi untuk efek bergerak */
-  padding-top: 15px;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #ffcc00;
+  transition: width 0.3s ease-in-out;
 }
 
 .nav-link:hover::after {
-  transform: scaleX(1); /* Mengubah skala garis saat hover */
+  width: 100%;
 }
 
-.btn {
-  background-color: #1ebe5b;
-  margin: 20px;
+.btn-primary {
+  background-color: #ffcc00;
+  color: #004080;
+  border: none;
+  padding: 8px 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease,
+    transform 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #0f4e27;
+.btn-primary:hover {
+  background-color: #e6b800;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
 }
 
 /* SLIDER */
 .slider {
   display: flex;
   height: 600px;
-  margin: auto;
+  margin: 0 auto;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
+
 .slider .list {
   position: absolute;
   width: max-content;
@@ -116,9 +154,13 @@ body {
 /* WAHANA */
 
 .wahana {
-  background-image: url(img/bgtiket.png);
-  background-color: #f47d20;
+  position: relative;
+  z-index: 2;
+  margin-top: 20px;
+  padding-top: 20px;
+  background: linear-gradient(to bottom, #2a6286, #d5ed9f);
 }
+
 .wahana .card:hover {
   transform: translateY(-10px);
   transition: transform 0.3s ease;
@@ -128,7 +170,6 @@ body {
 .card {
   border: none;
   border-radius: 10px;
-  margin: 20px;
   background-color: #d0e7ff4f;
 }
 
@@ -178,7 +219,7 @@ body {
 /* Info Cards */
 .info-section {
   padding: 50px 20px;
-  background-color: #f47d20;
+  background: linear-gradient(to bottom, #d5ed9f, #004080, #d5ed9f);
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -269,9 +310,9 @@ body {
 /* MERCHANT */
 .merchant-section {
   position: relative;
-  background-image: url(img/bgmerch.png);
+  background: linear-gradient(to bottom, #d5ed9f, #004080, #d5ed9f);
   background-color: #d5ed9f;
-  padding: 20px 0;
+  padding: 20px;
 }
 
 .section-title {
@@ -287,9 +328,9 @@ body {
 }
 
 .merchant-card {
-  background-color: white;
+  background-color: rgb(241, 236, 236);
   border-radius: 10px;
-  padding: 15px;
+  padding: 20px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -303,6 +344,7 @@ body {
   font-size: 1rem;
   color: #333;
   margin: 0;
+  font-weight: bold;
 }
 
 .merchant-card:hover {
@@ -310,8 +352,34 @@ body {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* PROFIL */
+.profil-section {
+  background: linear-gradient(to top, #004080, #d5ed9f);
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.profil-buy {
+  text-align: center;
+  background: linear-gradient(90deg, #2193b0, #6dd5ed);
+  padding: 40px;
+  width: 300px;
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+}
+
+.profil-buy h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
 /* TIKET */
-/* styles.css */
 #ticket-section {
   padding: 50px 20px;
   background-color: #f9f9f9;
@@ -382,94 +450,264 @@ input:focus {
   background-color: #005fa3;
 }
 
+.text-center {
+  margin-top: 100px;
+}
+
 /* POPUP */
 /* Pop-up Animasi */
-#popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  width: 90%;
-  max-width: 400px;
+/* Pop-up Styles */
+.ticket-booking-section {
+  margin-top: 50px;
   padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  z-index: 1000;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
 }
 
-#popup.show {
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
+.ticket-info .card,
+.ticket-form .card {
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
 }
 
-#popup h3 {
-  margin: 0 0 10px;
-  font-size: 1.5em;
-  color: #0078bf;
+.ticket-info .card:hover,
+.ticket-form .card:hover {
+  transform: translateY(-10px);
 }
 
-#popup p {
-  margin: 10px 0;
-  color: #333;
-}
-
-#close-popup {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background: #0078bf;
+.card-header {
+  background-color: #4caf50;
   color: white;
+  text-align: center;
+  padding: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.ticket-preview {
+  background-color: #e8f5e9;
+}
+
+#ticket-summary {
+  line-height: 2;
+}
+
+.total-price {
+  font-size: 1.2em;
+  color: #2e7d32;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.btn-primary {
+  background-color: #2196f3;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s;
 }
 
-#close-popup:hover {
-  background: #005fa3;
+.btn-primary:hover {
+  background-color: #1976d2;
 }
 
-/* Overlay */
-#popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  display: none;
-}
-
-#popup.show + #popup-overlay {
-  display: block;
+@media (max-width: 768px) {
+  .ticket-booking-section {
+    margin-top: 20px;
+  }
+  .ticket-info,
+  .ticket-form {
+    margin-bottom: 20px;
+  }
 }
 
 /* FOOTER */
 /* General Footer Style */
+/* Footer Styles */
+.footer {
+  background: linear-gradient(to top, #004080, #2b7bcb);
+  color: white;
+  padding: 40px 0;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 .footer-section {
   margin-bottom: 20px;
-  text-align: center;
 }
 
 .footer-section h2 {
-  color: #4caf50;
+  color: #2eee35;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
 }
 
 .footer-section p {
-  margin: 10px 0;
+  color: #ddd;
+  line-height: 1.6;
 }
 
-footer img {
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+}
+
+.social-icons img {
   width: 30px;
-  margin: 0 10px;
+  height: 30px;
+  object-fit: contain;
 }
 
 .footer-bottom {
-  margin-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  margin-top: 30px;
+  text-align: center;
+  color: #aaa;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-section {
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+/* PROFIL GROUP */
+.profil-center {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.profil-center h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.about-text p {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.activities-section {
+  margin-top: 40px;
+}
+.activities-section p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.activity-zone {
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.activity-zone h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.activity-zone p {
+  margin-bottom: 15px;
+}
+.activity-zone p strong {
+  color: #ffffff;
+}
+
+.info-zone {
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #f3f3f3;
+}
+
+.profil-buy {
+  display: inline-block;
+  padding: 12px 35px;
+  font-size: 1.2rem;
+  background: linear-gradient(90deg, #2193b0, #6dd5ed);
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.profil-buy:active {
+  transform: scale(0.98);
+}
+
+/* WAHANA */
+/* Section Styles */
+.wahana-section {
+  background: linear-gradient(to top, #004080, #d5ed9f);
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #004080 !important;
+}
+
+/* Zone Styles */
+.wahana-zone {
+  margin-bottom: 50px;
+}
+
+.zone-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Container Styles */
+.wahana-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Item Styles */
+.wahana-item {
+  background-color: #ffffff;
+  width: 200px;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.wahana-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.wahana-item p {
+  font-size: 14px;
+  color: #333;
+  padding: 10px;
 }

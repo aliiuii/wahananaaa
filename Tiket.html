@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wahana Bermain</title>
+    <title>Anadayana: Hutan Kebahagiaan - Destinasi Wisata Keluarga</title>
+    <meta name="description"
+        content="Anadayana, destinasi ekowisata yang menyatukan keindahan alam dengan wahana bermain modern. Nikmati keseruan dan edukasi lingkungan bersama keluarga.">
+    <link rel="icon" href="img/Logotok.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -13,12 +16,12 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-md sticky-top" id="mainNav">
         <div class="logo">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
                 <img src="img/Logo.png" alt="Logo Anadayana" class="logo mr-3" />
             </a>
         </div>
-        <button class="navbar-toggler navbar-dark bg-dark" type="button" data-toggle="collapse"
-            data-target="#main-navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navigation"
+            aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="main-navigation">
@@ -27,14 +30,13 @@
                     <a class="nav-link" href="index.html">HOME</a>
                 </li>
                 <li class="nav-item">
-
-                    <a class="nav-link" href="#">WAHANA</a>
+                    <a class="nav-link" href="Wahana.html">WAHANA</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">PROFIL GROUP</a>
+                    <a class="nav-link" href="Profil Group.html">PROFIL GROUP</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">PROMO</a>
+                    <a class="nav-link" href="Promo.html">PROMO</a>
                 </li>
             </ul>
         </div>
@@ -43,104 +45,119 @@
         </div>
     </nav>
 
-    <section id="ticket-section">
-        <div class="ticket-container">
-            <h2>Beli Tiket Wahana</h2>
-            <form id="ticket-form">
-                <div class="form-group">
-                    <label for="contact-name">Nama Kontak</label>
-                    <input type="text" id="nama-kontak" name="nama-kontak" placeholder="Masukkan nama lengkap" required>
+
+    <div class="ticket ticket-booking-section">
+        <div class="row">
+            <div class="col-md-6 ticket-info">
+                <div class="card ticket-preview">
+                    <div class="card-header">
+                        <h3>Detail Pemesanan</h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="ticket-summary">
+                            <p>Tipe Tiket: <span id="selected-ticket-type">-</span></p>
+                            <p>Jumlah Tiket: <span id="selected-ticket-quantity">-</span></p>
+                            <p>Total Harga: <span id="selected-total-price">Rp 0</span></p>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="Masukkan email" required>
+            </div>
+            <div class="col-md-6 ticket-form">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Form Pemesanan Tiket</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="ticket-form">
+                            <div class="mb-3">
+                                <label for="nama" class="form-label">Nama Lengkap</label>
+                                <input type="text" class="form-control" id="nama" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="ticket-type" class="form-label">Tipe Tiket</label>
+                                <select id="ticket-type" class="form-select" required>
+                                    <option value="">Pilih Tipe Tiket</option>
+                                    <option value="50000">Dewasa - Rp 75.000</option>
+                                    <option value="40000">Anak-Anak - Rp 50.000</option>
+                                    <option value="40000">Keluarga - Rp 250.000</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="quantity" class="form-label">Jumlah Tiket</label>
+                                <input type="number" class="form-control" id="quantity" min="1" max="10" required>
+                            </div>
+                            <div class="mb-3 total-price">
+                                <strong>Total Harga: <span id="total-price">Rp 0</span></strong>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Pesan Sekarang</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="phone">Nomor Telepon</label>
-                    <input type="text" id="nomor-telepon" name="nomor-telepon" placeholder="Masukkan nomor telepon">
-                </div>
-                <div class="form-group">
-                    <label for="address">Alamat</label>
-                    <input type="text" id="alamat" name="alamat" placeholder="Masukkan alamat" required>
-                </div>
-                <div class="form-group">
-                    <label for="ride">Pilih Wahana</label>
-                    <select id="ride" required>
-                        <option value="" disabled selected>-- Pilih Wahana --</option>
-                        <option value="50000" data-name="Roller Coaster">Roller Coaster - Rp 50,000</option>
-                        <option value="40000" data-name="Ferris Wheel">Ferris Wheel - Rp 40,000</option>
-                        <option value="30000" data-name="Bumper Cars">Bumper Cars - Rp 30,000</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="quantity">Jumlah Tiket</label>
-                    <input type="number" id="quantity" min="1" max="10" placeholder="Masukkan jumlah tiket" required>
-                </div>
-                <div class="form-group total-price">
-                    <label>Total Harga</label>
-                    <span id="total">Rp 0</span>
-                </div>
-                <div class="form-group">
-                    <label for="remarks">Remarks</label>
-                    <textarea id="remarks" name="remarks" placeholder="Enter any remarks..."></textarea>
-                </div>
-                <button type="submit" class="buy-button">Beli Tiket</button>
-            </form>
+            </div>
         </div>
-    </section>
-    <div id="popup">
-        <h3>Transaksi Berhasil</h3>
-        <p id="popup-message"></p>
-        <button id="close-popup">Tutup</button>
     </div>
-    <div id="popup-overlay"></div>
 
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <img src="img/Logo.png" alt="Maskot Kiri" class="footer-icon">
-                <h3>Alamat</h3>
-                <p>
-                    JL. Magelang KM 3 (JL. Jambon) Sinduadi, Mlati<br>
-                    Kab. Sleman, D.I.Y Indonesia
-                </p>
-            </div>
-            <div class="footer-section">
-                <h3>Maps</h3>
-                <div class="maps-container">
-                    <img src="path-to-google-maps-icon.png" alt="Google Maps">
+    <div class="modal fade" id="konfirmasi-modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Konfirmasi Pemesanan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="social-media">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa fa-tiktok"></i></a>
+                <div class="modal-body" id="modal-konfirmasi-body">
+                    <!-- Akan diisi oleh JavaScript -->
                 </div>
-            </div>
-            <div class="footer-section">
-                <img src="img/Logo.png" alt="Maskot Kanan" class="footer-icon">
-                <h3>Kontak</h3>
-                <p>
-                    📞 +62 274 6429660<br>
-                    📧 admin.ske@skedupark.id
-                </p>
-                <ul>
-                    <li>Senin (Tutup)</li>
-                    <li>Selasa - Jum'at: 09:00 - 17:00</li>
-                    <li>Sabtu, Minggu, dan Libur Nasional:</li>
-                    <li>08:00 - 17:00 (Waterpark)</li>
-                    <li>10:00 - 18:00 (Wahana)</li>
-                </ul>
-                <a href="https://wa.me/number" class="whatsapp-button">Hubungi Kami</a>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-primary" id="konfirmasi-bayar">Bayar</button>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            © 2024 Anadayana park. All Rights Reserved.
+    </div>
+
+
+    <footer class="footer bg-dark text-white pt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 footer-section">
+                    <h2>ANADAYANA</h2>
+                    <p>Anandavana terus berkembang sebagai destinasi rekreasi keluarga, menghadirkan inovasi wahana yang
+                        menyatu dengan keindahan dan kelestarian alam..</p>
+                </div>
+                <div class="col-md-4 footer-section">
+                    <h2>Kontak</h2>
+                    <p>Email: anadayana@gmail.com</p>
+                    <p>Telepon: (+62) 123-4567-89123</p>
+                </div>
+                <div class="col-md-4 footer-section">
+                    <h2>Media Sosial</h2>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/jungleland.id" aria-label="Facebook"><img
+                                src="img/logo facebook.png" alt="Facebook"></a>
+                        <a href="https://www.instagram.com/jungleland_indo/" aria-label="Instagram"><img
+                                src="img/logo instagram.png" alt="Instagram"></a>
+                        <a href="https://www.youtube.com/c/JunglelandIndonesia" aria-label="YouTube"><img
+                                src="img/logo youtube.png" alt="YouTube"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center mt-4">
+                <p>© 2024 Anadayana. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+    <script src="Javascript/Nav.js"></script>
+    <script src="Javascript/slider.js"></script>
+    <script src="Javascript/Popup.js"></script>
 </body>
 
 </html>
