@@ -68,18 +68,18 @@
                         <h3>Form Pemesanan Tiket</h3>
                     </div>
                     <div class="card-body">
-                        <form id="ticket-form">
+                        <form id="ticket-form" name="ticket-form">
                             <div class="mb-3">
-                                <label for="nama" class="form-label">Nama Lengkap</label>
-                                <input type="text" class="form-control" id="nama" required>
+                                <label for="nama" class="form-label">Nama</label>
+                                <input type="text" class="form-control" id="nama" name="nama" required>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" required>
+                                <input type="email" class="form-control" id="email" name="email" required>
                             </div>
                             <div class="mb-3">
                                 <label for="ticket-type" class="form-label">Tipe Tiket</label>
-                                <select id="ticket-type" class="form-select" required>
+                                <select id="ticket-type" class="form-select" name="ticket-type" required>
                                     <option value="">Pilih Tipe Tiket</option>
                                     <option value="75000">Dewasa - Rp 75.000</option>
                                     <option value="50000">Anak-Anak - Rp 50.000</option>
@@ -88,11 +88,13 @@
                             </div>
                             <div class="mb-3">
                                 <label for="quantity" class="form-label">Jumlah Tiket</label>
-                                <input type="number" class="form-control" id="quantity" min="1" max="10" required>
+                                <input type="number" class="form-control" id="quantity" name="quantity" min="1" max="10" required>
                             </div>
                             <div class="mb-3 total-price">
                                 <strong>Total Harga: <span id="total-price">Rp 0</span></strong>
                             </div>
+                            <!-- Input hidden untuk total harga -->
+                            <input type="hidden" id="hidden-total-price" name="total-price">
                             <button type="submit" class="btn btn-primary w-100">Pesan Sekarang</button>
                         </form>
                     </div>
@@ -159,6 +161,7 @@
     <script src="Javascript/Nav.js"></script>
     <script src="Javascript/slider.js"></script>
     <script src="Javascript/Popup.js"></script>
+    <script src="Javascript/Tiket.js"></script>
 </body>
 
 </html>
